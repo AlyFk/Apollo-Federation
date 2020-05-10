@@ -1,0 +1,22 @@
+{
+  "name": "sample-apollo-federation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/gateway": "^0.14.1",
+    "apollo-server": "^2.12.0",
+    "graphql": "^15.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "lerna": "^3.20.2",
+    "nodemon": "^2.0.3"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run dev:gateway\" \"npm run dev:sevices\"",
+    "dev:gateway": "nodemon ./Gateway/index.js",
+    "dev:sevices": "./node_modules/.bin/lerna run dev --stream",
+    "bootstrap": "./node_modules/.bin/lerna bootstrap"
+  }
+}
